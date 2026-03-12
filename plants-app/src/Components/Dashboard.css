@@ -1,0 +1,396 @@
+.space {
+  height: 100vh;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.sun {
+  width: 110px;
+  height: 110px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 40px orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* orbit */
+
+.orbit {
+  position: absolute;
+  border: 1px dashed gray;
+  border-radius: 50%;
+  animation: orbitRotate linear infinite;
+}
+
+/* orbit sizes */
+
+.mercury-orbit {
+  width: 140px;
+  height: 140px;
+  animation-duration: 4s;
+}
+.venus-orbit {
+  width: 190px;
+  height: 190px;
+  animation-duration: 6s;
+}
+.earth-orbit {
+  width: 240px;
+  height: 240px;
+  animation-duration: 8s;
+}
+.mars-orbit {
+  width: 290px;
+  height: 290px;
+  animation-duration: 10s;
+}
+.jupiter-orbit {
+  width: 350px;
+  height: 350px;
+  animation-duration: 14s;
+}
+.saturn-orbit {
+  width: 420px;
+  height: 420px;
+  animation-duration: 18s;
+}
+.uranus-orbit {
+  width: 480px;
+  height: 480px;
+  animation-duration: 22s;
+}
+.neptune-orbit {
+  width: 540px;
+  height: 540px;
+  animation-duration: 26s;
+}
+
+/* planet base */
+
+.planet {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  background-size: cover;
+  animation: spin 5s linear infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* names */
+
+.planet span {
+  margin-top: 30px;
+  font-size: 11px;
+}
+
+/* realistic textures */
+
+.mercury {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg");
+}
+
+.venus {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg");
+}
+
+.earth {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg");
+}
+
+.mars {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg");
+}
+
+.jupiter {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg");
+}
+
+.saturn {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg");
+}
+
+.uranus {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg");
+}
+
+.neptune {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg");
+}
+
+/* animations */
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.info {
+  position: absolute;
+  top: 40px;
+  left: -50px;
+  width: 120px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+/* show info when hovering */
+
+.planet:hover .info {
+  opacity: 1;
+}
+
+.info-panel {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 220px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 0 10px white;
+}
+
+.info-panel button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: #444;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.mercury {
+  width: 8px;
+  height: 8px;
+}
+.venus {
+  width: 14px;
+  height: 14px;
+}
+.earth {
+  width: 15px;
+  height: 15px;
+}
+.mars {
+  width: 11px;
+  height: 11px;
+}
+.jupiter {
+  width: 30px;
+  height: 30px;
+}
+.saturn {
+  width: 26px;
+  height: 26px;
+}
+.uranus {
+  width: 20px;
+  height: 20px;
+}
+.neptune {
+  width: 20px;
+  height: 20px;
+}
+
+.saturn::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 8px;
+  left: -7px;
+  transform: rotate(20deg);
+}
+
+.mercury-orbit {
+  animation-duration: 10s;
+}
+.venus-orbit {
+  animation-duration: 14s;
+}
+.earth-orbit {
+  animation-duration: 18s;
+}
+.mars-orbit {
+  animation-duration: 22s;
+}
+.jupiter-orbit {
+  animation-duration: 30s;
+}
+.saturn-orbit {
+  animation-duration: 38s;
+}
+.uranus-orbit {
+  animation-duration: 46s;
+}
+.neptune-orbit {
+  animation-duration: 54s;
+}
+
+.planet {
+  border-radius: 50%;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  background-size: cover;
+  animation: spin 10s linear infinite;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.info {
+  position: absolute;
+  top: 35px;
+  left: -40px;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.sun {
+  width: 120px;
+  height: 120px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Sun_white.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 60px orange;
+}
+
+.space::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent
+    url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  animation: starsMove 120s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes starsMove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-500px, -500px);
+  }
+}
+
+.sun {
+  animation: sunGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes sunGlow {
+  from {
+    box-shadow: 0 0 40px orange;
+  }
+  to {
+    box-shadow: 0 0 90px yellow;
+  }
+}
+
+.planet:hover {
+  transform: scale(1.6);
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.orbit {
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.planet::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 5px;
+  left: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.info-panel {
+  animation: panelSlide 0.4s ease;
+}
+
+@keyframes panelSlide {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.info-panel button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: linear-gradient(45deg, #444, #777);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.info-panel button:hover {
+  background: linear-gradient(45deg, #666, #999);
+}
+
+.space::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 70%, rgba(0, 0, 0, 0.9));
+}
+
+.space {
+  background: rgb(29, 24, 24);
+  overflow: hidden;
+}
